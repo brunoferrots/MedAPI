@@ -28,4 +28,28 @@ public class Address {
         this.number = dataAddress.number();
         this.complement = dataAddress.complement();
     }
+
+    public void updateAddress(DataAddress dataAddress) {
+        if (dataAddress.street() != null)
+            this.street = dataAddress.street();
+
+        if (dataAddress.district() != null)
+            this.district = dataAddress.district();
+
+        if (dataAddress.zipcode() != null)
+            this.zipcode = dataAddress.zipcode();
+
+        if (dataAddress.city() != null)
+            this.city = dataAddress.city();
+
+        if (dataAddress.state() != null)
+            this.state = dataAddress.state();
+
+        if (dataAddress.number() != null)
+            this.number = dataAddress.number();
+
+        if (dataAddress.complement() != null)
+            this.complement = dataAddress.complement();
+
+    }
 }

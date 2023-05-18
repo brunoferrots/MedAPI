@@ -29,6 +29,8 @@ public class Doctor {
     @Embedded
     private Address address;
 
+    private boolean active;
+
     public Doctor(DataDoctor doctor) {
         this.name = doctor.name();
         this.email = doctor.email();
@@ -36,5 +38,21 @@ public class Doctor {
         this.specialty = doctor.specialty();
         this.address = new Address(doctor.address());
         this.phoneNumber = doctor.phoneNumber();
+        this.active = true;
+    }
+
+    public void updateInformation(DataUpdateDoctor data) {
+        if(data.name() != null)
+            this.name = data.name();
+
+        if(data.phoneNumber() != null)
+            this.phoneNumber = data.phoneNumber();
+
+        if (data.dataAddress() != null)
+            this.address.updateAddress(data.dataAddress());
+    }
+
+    public void disable() {
+        this.active = false;
     }
 }
